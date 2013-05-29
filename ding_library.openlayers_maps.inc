@@ -92,3 +92,22 @@ function ding_library_openlayers_maps() {
 
   return $export;
 }
+
+/**
+ * Implements hook_openlayers_map_preprocess_alter().
+ */
+function ding_library_openlayers_map_preprocess_alter(&$map) {
+  if (arg(0) != 'node' || !is_numeric(arg(1))) {
+    return;
+  }
+
+  $node = node_load(arg(1));
+  $centerpoint = $node->field_geocode['und'][0]['lon'] . ', ' . $node->field_geocode['und'][0]['lat'];
+
+  $map['center'] = array(
+    'initial' => array(
+      'centerpoint' => $centerpoint,
+      'zoom' => '16',
+    ),
+  );
+}
