@@ -1,4 +1,4 @@
-<div class="ding-library-opening-hours">
+<div class="ding_library_hours ding-library-opening-hours" data-type="opening_hours" id="<?php echo mt_rand() ?>">
   <?php foreach ($days as $date => $info) :?>
     <div class="day">
       <div class="day-name"><?php print $info['day_name']; ?></div>

@@ -4,6 +4,19 @@
  * Code for the Ding library feature.
  */
 
+
+/**
+ * Implements hook_page_build().
+ *
+ * @todo Remove this crap when Opening Hours has valid markup.
+ */
+function ding_library_page_build(&$page) {
+  if ($page['#type']=='page' && isset($page['content']['system_main']['content']['#markup'])) {
+    $page['content']['system_main']['content']['#markup'] .= '<div id="prev" style="display:none;">Helper Content Previous!</div>';
+    $page['content']['system_main']['content']['#markup'] .= '<div id="next" style="display:none;">Helper Content Next!</div>';
+  }
+}
+
 /**
  * Implements hook_init().
  */
@@ -222,7 +235,7 @@ function ding_library_block_view($delta = '') {
               foreach ($tree as $item) {
                   if ($item['link']['in_active_trail']) {
                       $node = menu_get_object();
-                      if ($node->type == 'ding_library') {
+                      if ($node && $node->type == 'ding_library') {
                           $tree = $item['below'];
                           break;
                       }
