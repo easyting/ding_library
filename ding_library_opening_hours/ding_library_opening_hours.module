@@ -5,6 +5,34 @@
  */
 
 /**
+ * Implements hook_menu().
+ */
+function ding_library_opening_hours_menu() {
+  $menu = array();
+
+  $menu['ding_library_hours_ajax/%/%'] = array(
+    'title' => 'Ding library opening/today hours',
+    'description' => 'Ajax representation of widget',
+    'access arguments' => array(),
+    'page callback' => 'ding_library_opening_hours_ajax',
+    'page arguments' => array(1, 2),
+  );
+
+  return $menu;
+}
+
+/**
+ * Ajax handler.
+ */
+function ding_library_opening_hours_ajax($type, $id) {
+  $theme = 'ding_library_' . $type . '_view';
+  $commands = array();
+  $commands[] = ajax_command_replace('#' . $id . ".ding_library_hours", theme($theme));
+
+  return ajax_deliver(array('#type' => 'ajax', '#commands' => $commands));
+}
+
+/**
  * Implements hook_block_info().
  */
 function ding_library_opening_hours_block_info() {
@@ -25,6 +53,8 @@ function ding_library_opening_hours_block_info() {
  */
 function ding_library_opening_hours_block_view($delta = '') {
   $block = array();
+
+  drupal_add_js(drupal_get_path('module', 'ding_library_opening_hours') . '/js/ding_library_opening_hours.js');
 
   if ($delta == 'ding_library_opening_hours' && $node = menu_get_object()) {
     drupal_add_css(drupal_get_path('module', 'ding_library_opening_hours') . '/css/ding_library_opening_hours.css', array('type' => 'file'));
