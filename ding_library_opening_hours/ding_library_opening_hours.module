@@ -13,7 +13,7 @@ function ding_library_opening_hours_menu() {
   $menu['ding_library_hours_ajax/%/%'] = array(
     'title' => 'Ding library opening/today hours',
     'description' => 'Ajax representation of widget',
-    'access arguments' => array(),
+    'access arguments' => array('access content'),
     'page callback' => 'ding_library_opening_hours_ajax',
     'page arguments' => array(1, 2),
   );
