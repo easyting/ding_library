@@ -111,8 +111,14 @@ function ding_library_block_save($delta = '', $edit = array()) {
 function ding_library_block_view($delta = '') {
   $block = array();
   $node = NULL;
-  if ($delta == 'library_address' && (($nid = variable_get('ding_library_address_nid', '')) && ($node = node_load($nid)) || user_access('administer blocks'))) {
+  if ($delta == 'library_address') {
     $block['subject'] = t('Address');
+    $node = NULL;
+    $nid = variable_get('ding_library_address_nid', '');
+    if (!empty($nid)) {
+      $node = node_load($nid);
+    }
+
     $block['content'] = array(
       '#theme' => 'ding_library_address',
       '#node' => $node,
@@ -304,7 +310,7 @@ function template_preprocess_ding_library_address(&$vars) {
       $vars['mail'] = l($mail['email'], 'mailto:' . $mail['email']);
     }
   }
-  else {
+  elseif (user_access('administer blocks')) {
     $vars['name'] = t('Please select a library to display address information for at the <a href="!link">block configuration page</a>.', array('!link' => url('admin/structure/block/manage/ding_library/library_address/configure')));
   }
 }
