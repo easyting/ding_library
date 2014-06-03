@@ -53,6 +53,12 @@ function ding_library_field_default_fields() {
           'type' => 'addressfield_default',
           'weight' => '0',
         ),
+        'related_category_items' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'addressfield',
@@ -137,6 +143,12 @@ function ding_library_field_default_fields() {
           'type' => 'text_default',
           'weight' => '5',
         ),
+        'related_category_items' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -200,6 +212,12 @@ function ding_library_field_default_fields() {
           'settings' => array(),
           'type' => 'email_default',
           'weight' => '1',
+        ),
+        'related_category_items' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -275,6 +293,12 @@ function ding_library_field_default_fields() {
           'type' => 'text_default',
           'weight' => '9',
         ),
+        'related_category_items' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -338,6 +362,12 @@ function ding_library_field_default_fields() {
           ),
           'type' => 'geofield_wkt',
           'weight' => '7',
+        ),
+        'related_category_items' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -421,6 +451,12 @@ function ding_library_field_default_fields() {
           'settings' => array(),
           'type' => 'link_default',
           'weight' => '10',
+        ),
+        'related_category_items' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
@@ -513,6 +549,12 @@ function ding_library_field_default_fields() {
           ),
           'type' => 'image',
           'weight' => '12',
+        ),
+        'related_category_items' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -613,6 +655,12 @@ function ding_library_field_default_fields() {
           'type' => 'image',
           'weight' => '11',
         ),
+        'related_category_items' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -704,6 +752,12 @@ function ding_library_field_default_fields() {
           'type' => 'text_default',
           'weight' => '8',
         ),
+        'related_category_items' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -779,6 +833,12 @@ function ding_library_field_default_fields() {
           'type' => 'text_default',
           'weight' => '2',
         ),
+        'related_category_items' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -831,8 +891,8 @@ function ding_library_field_default_fields() {
       'no_ui' => TRUE,
       'settings' => array(
         'allowed_values' => array(
-          0 => t('Hide related content on library page'),
-          1 => t('Show related content on library page'),
+          0 => 'Hide related content on library page',
+          1 => 'Show related content on library page',
         ),
         'allowed_values_function' => '',
       ),
@@ -855,6 +915,12 @@ function ding_library_field_default_fields() {
           'type' => 'hidden',
           'weight' => '13',
         ),
+        'related_category_items' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -870,7 +936,7 @@ function ding_library_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'group_group',
-      'label' => t('Show related content on library page'),
+      'label' => 'Show related content on library page',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -907,7 +973,6 @@ function ding_library_field_default_fields() {
   t('E-mail address');
   t('Fax number');
   t('Geocode');
-  t('Header image');
   t('If enabled, events and news can be marked as related to this library and will show up on its library page.');
   t('Links');
   t('List image');
