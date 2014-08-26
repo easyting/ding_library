@@ -19,13 +19,14 @@ function ding_library_openlayers_maps() {
   $openlayers_maps->data = array(
     'width' => 'auto',
     'height' => '225px',
-    'css_path' => '',
+    'image_path' => 'profiles/artesis/modules/contrib/openlayers/themes/default_dark/img/',
+    'css_path' => 'profiles/artesis/modules/contrib/openlayers/themes/default_dark/style.css',
     'proxy_host' => '',
     'hide_empty_map' => 0,
     'center' => array(
       'initial' => array(
-        'centerpoint' => '12.543640136217, 55.68726232509',
-        'zoom' => '12',
+        'centerpoint' => '5.1663238545549, 60.427744620768',
+        'zoom' => '8',
       ),
       'restrict' => array(
         'restrictextent' => 0,
@@ -48,9 +49,9 @@ function ding_library_openlayers_maps() {
       ),
       'openlayers_behavior_panzoom' => array(),
     ),
-    'default_layer' => 'osm_mapnik',
+    'default_layer' => 'google_normal',
     'layers' => array(
-      'osm_mapnik' => 'osm_mapnik',
+      'google_normal' => 'google_normal',
       'ding_library_openlayers_1' => 'ding_library_openlayers_1',
     ),
     'layer_weight' => array(
@@ -76,8 +77,9 @@ function ding_library_openlayers_maps() {
       'select' => 'default',
       'temporary' => 'default',
     ),
+    'map_name' => 'ding_library_map',
   );
-  $export['ding_library_map'] = $openlayers_maps;
+  $export["ding_library_map"] = $openlayers_maps;
 
   return $export;
 }
